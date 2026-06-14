@@ -1,0 +1,180 @@
+.slideContainer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+}
+
+.slidesWrapper {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+/* Navigation arrow styles */
+.navigationArrow {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navigationArrow:hover {
+  transform: scale(1.1);
+}
+
+.navigationArrow button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.navigationArrow button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.navigationArrow button:active {
+  transform: translateY(0);
+}
+
+/* Page indicator dots */
+.pageIndicators {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 50;
+}
+
+.pageDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pageDot.active {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.3);
+}
+
+.pageDot:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Social links footer */
+.socialFooter {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 50;
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #333;
+}
+
+.socialIcon:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navigationArrow {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .navigationArrow button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .socialFooter {
+    bottom: 1rem;
+    left: 1rem;
+    gap: 0.75rem;
+  }
+
+  .socialIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .pageIndicators {
+    bottom: 1rem;
+  }
+
+  .slide {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigationArrow {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .navigationArrow button {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .socialFooter {
+    display: none;
+  }
+
+  .pageIndicators {
+    bottom: 1rem;
+    gap: 0.35rem;
+  }
+
+  .pageDot {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
