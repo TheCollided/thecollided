@@ -7,7 +7,6 @@ import { BrandPage } from './BrandPage';
 import { MyntraPage } from './MyntraPage';
 import { ContactPage } from './ContactPage';
 import { NavigationArrow } from './NavigationArrow';
-import { SocialLinks } from './SocialLinks';
 import styles from '@/styles/slider.module.css';
 
 const pages = [
@@ -17,7 +16,7 @@ const pages = [
 ];
 
 export const PageSlider = () => {
-  const { currentPage, totalPages, goToNextPage, goToPage } = useSlider();
+  const { currentPage, totalPages, goToNextPage, goToPreviousPage, goToPage } = useSlider();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -36,13 +35,13 @@ export const PageSlider = () => {
       if (e.key === 'ArrowRight') {
         goToNextPage();
       } else if (e.key === 'ArrowLeft') {
-        // You could add previous page functionality here
+        goToPreviousPage();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToNextPage]);
+  }, [goToNextPage, goToPreviousPage]);
 
   // Handle touch/swipe on mobile
   useEffect(() => {
@@ -98,7 +97,7 @@ export const PageSlider = () => {
         ))}
       </div>
 
-      <NavigationArrow onNext={goToNextPage} isLastPage={currentPage === totalPages - 1} />
+      <NavigationArrow onNext={goToNextPage} onPrev={goToPreviousPage} isLastPage={currentPage === totalPages - 1} />
 
       {/* Page indicators */}
       <div className={styles.pageIndicators}>
@@ -111,8 +110,6 @@ export const PageSlider = () => {
           />
         ))}
       </div>
-
-      <SocialLinks />
     </div>
   );
 };

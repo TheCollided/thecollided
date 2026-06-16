@@ -1,76 +1,53 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import styles from '@/styles/pages.module.css';
 
-interface Location {
-  id: number;
-  name: string;
-  address: string;
-  phone: string;
-  email: string;
-  mapUrl: string;
-}
-
 export const ContactPage = () => {
-  const [locations, setLocations] = useState<Location[]>([]);
-
-  useEffect(() => {
-    const loadLocations = async () => {
-      try {
-        const data = await import('@/config/locations.json');
-        setLocations(data.locations);
-      } catch (error) {
-        console.error('Failed to load locations:', error);
-      }
-    };
-    loadLocations();
-  }, []);
-
   return (
     <div className={styles.contactPage}>
-      <h2 className={styles.contactTitle}>Get in Touch</h2>
       
-      <div className={styles.contactCardsContainer}>
-        {locations.map((location) => (
-          <div key={location.id} className={styles.contactCard}>
-            <h3 className={styles.cardTitle}>📍 {location.name}</h3>
-            
-            <div className={styles.cardContent}>
-              <div className={styles.cardItem}>
-                <span className={styles.cardIcon}>📮</span>
-                <span>{location.address}</span>
-              </div>
-
-              <div className={styles.cardItem}>
-                <span className={styles.cardIcon}>📞</span>
-                <a href={`tel:${location.phone}`} className={styles.cardLink}>
-                  {location.phone}
-                </a>
-              </div>
-
-              <div className={styles.cardItem}>
-                <span className={styles.cardIcon}>✉️</span>
-                <a href={`mailto:${location.email}`} className={styles.cardLink}>
-                  {location.email}
-                </a>
-              </div>
-
-              <div className={styles.cardItem}>
-                <span className={styles.cardIcon}>🗺️</span>
-                <a 
-                  href={location.mapUrl} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.cardLink}
-                >
-                  View on Map
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className={styles.contentWrapper}>
+        <h1 className={styles.contactTitle}>GET IN TOUCH</h1>
+        
+        <div className={styles.textContainer}>
+          <p className={styles.contactDescription}>
+            Queries, feedback, bulk orders, customizations, or collaboration opportunities
+          </p>
+          <p className={styles.contactDescription}>
+            we'd love to hear from you.
+          </p>
+        </div>
+        
+        <div className={styles.contactLinksContainer}>
+          <a href="https://www.instagram.com/thecollided.com_" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+            <Image
+              src="/instagram.png"
+              alt="Instagram"
+              width={45}
+              height={45}
+              className={styles.socialIcon}
+              style={{ width: '45px', height: 'auto' }}
+              priority
+            />
+            <span>@thecollided.com_</span>
+          </a>
+          
+          <a href="https://wa.me/919784843532" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+            <Image
+              src="/whatsapp.png"
+              alt="WhatsApp"
+              width={45}
+              height={45}
+              className={styles.socialIcon}
+              style={{ width: '45px', height: 'auto' }}
+              priority
+            />
+            <span>+91-9784843532</span>
+          </a>
+        </div>
       </div>
+      
     </div>
   );
 };
