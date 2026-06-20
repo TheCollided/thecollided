@@ -97,7 +97,7 @@ export const PageSlider = () => {
         ))}
       </div>
 
-      <NavigationArrow onNext={goToNextPage} onPrev={goToPreviousPage} isLastPage={currentPage === totalPages - 1} />
+      {/* <NavigationArrow onNext={goToNextPage} onPrev={goToPreviousPage} isLastPage={currentPage === totalPages - 1} /> */}
 
       {/* Page indicators */}
       <div className={styles.pageIndicators}>

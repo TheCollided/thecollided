@@ -33,7 +33,7 @@ export const MyntraPage = () => {
         <div className={styles.rightSection}>
           <div className={styles.myntraBadgeBox}>
             <Image
-              src="/myntraLogo.jpg"
+              src="/myntraLogo.png"
               alt="Myntra Logo"
               width={220}
               height={80}

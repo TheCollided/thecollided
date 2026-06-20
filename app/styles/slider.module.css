@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 2rem;
 }
 
 /* Navigation arrow styles */
@@ -145,7 +144,7 @@
   }
 
   .slide {
-    padding: 1rem;
+    padding: 1rem 0rem;
   }
 }
 
