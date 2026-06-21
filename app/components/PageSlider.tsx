@@ -60,6 +60,10 @@ export const PageSlider = () => {
         // Swiped left - go to next page
         goToNextPage();
       }
+      if (touchStartX - touchEndX < -50) {
+        // Swiped right - go to previous page
+        goToPreviousPage();
+      }
     };
 
     const container = document.querySelector(`.${styles.slideContainer}`);

@@ -20,7 +20,7 @@ export const MyntraPage = () => {
           <Image
             src="/mainLogo.png"
             alt="Collided Logo"
-            width={350}
+            width={370}
             height={120}
             className={styles.myntraLogoLeft}
             style={{ width: 'auto%', height: '100%', maxHeight: '750px' }}

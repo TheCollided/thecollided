@@ -333,6 +333,29 @@
 
   .logoWrapper {
     align-items: center; /* Center-aligns the logo and text on smaller screens */
+    width: 80%;
+  }
+
+  .leftSection {
+    flex: 2; 
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0; 
+  }
+
+  .divider {
+  flex: 0 0 auto; 
+  width: 3px;
+  height: 150px; 
+  background-color: #ffffff;
+  animation: slideUp 0.8s ease-out;
+}
+
+  .textSection {
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-top: 3rem;
+    width: fit-content;
   }
 
   .myntraTitle {
