@@ -20,11 +20,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "The Collided - Brand Landing",
+  title: "The Collided - Premium Clothing Brand",
   description: "Welcome to The Collided. Discover our brand, shop on Myntra, and get in touch with us.",
-  icons: {
-    icon: '/favicon.ico',
-  },
+  // icons: {
+  //   icon: '/favicon.ico',
+  // },
 };
 
 export const viewport: Viewport = {
