@@ -167,14 +167,14 @@
 
 .shopNowButton {
   display: inline-block;      /* Allows the anchor tag to respect padding */
-  padding: 1rem 2.5rem;       /* Gives the button its shape and clickable area */
-  background-color: #423f3f;  /* Replaced 'none' with a solid dark color */
-  border: 0.3rem solid #423f3f;  /* Defines the edge */
+  padding: 0.3rem 0.3rem;       /* Gives the button its shape and clickable area */
+  background-color: #ffffff;  /* Replaced 'none' with a solid dark color */
+  border: 0.3rem solid #ffffff;  /* Defines the edge */
   border-radius: 2rem;         /* Optional: Softens the corners slightly */
   text-align: center;         /* Centers the text inside the new padding */
 
   /* --- ORIGINAL STYLES --- */
-  color: #fff;
+  color: #000000;
   cursor: pointer;
   letter-spacing: 2px;
   margin-bottom: 4rem;
@@ -186,9 +186,7 @@
   animation: slideUp 1.2s ease-out;
 }
 
-.shopNowButton:hover {
-  background-color: #333;               /* Lightens the background on hover */
-  border-color: #333;                   
+.shopNowButton:hover {                   
   transform: translateY(-3px);          /* Gives a subtle lifting effect */
   box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Adds a shadow to complete the 3D button feel */
 }
@@ -261,9 +259,9 @@
 .contactLink {
   /* --- NEW BUTTON STYLES --- */
   display: inline-flex;       /* Upgraded from 'flex' so the button hugs its content instead of stretching */
-  padding: 1rem 2.5rem;       /* Adds the structural button shape */
-  background-color: #423f3f;  /* Sleek, dark background to contrast the white text */
-  border: 0.3rem solid #423f3f;  /* Matches the background */
+  padding: 0.3rem 0.3rem;       /* Adds the structural button shape */
+  background-color: #ffffff;  /* Sleek, dark background to contrast the white text */
+  border: 0.3rem solid #ffffff;  /* Matches the background */
   border-radius: 2rem;         /* Softens the corners */
   justify-content: center;    /* Centers the internal flex items */
   cursor: pointer;            /* Ensures it shows a pointer finger on hover */
@@ -271,7 +269,7 @@
   /* --- ORIGINAL STYLES --- */
   align-items: center;
   gap: 1.2rem; 
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-size: 1.5rem; 
   /* THE FONT FIX: Forcing a lighter weight makes it look significantly more elegant */
@@ -282,8 +280,6 @@
 }
 
 .contactLink:hover {
-  background-color: #333333;               /* Lightens up subtly */
-  border-color: #333333;
   transform: translateY(-2px);             /* A gentle lift suited for the lighter font weight */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft drop shadow to emphasize the lift */
 }

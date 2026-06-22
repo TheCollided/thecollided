@@ -63,7 +63,7 @@ export const MyntraPage = () => {
         className={styles.shopNowButton}
         onClick={handleMyntraClick}
       >
-        SHOP NOW!!
+        SHOP NOW
       </a>
 
     </div>
